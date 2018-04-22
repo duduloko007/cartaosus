@@ -1,0 +1,90 @@
+
+.topo{
+		width: 100%;
+		height: 400px;
+	}
+.topo img{
+		width: 100%;
+		height: 400px;
+}
+.banner{
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 500px;
+	background: black;
+}
+.banner p{
+ text-align: center;
+ text-transform: uppercase;
+letter-spacing:0.2em;
+font-size: 35px;
+font-family: Open Sans, sans-serif;
+margin-top: 180px;
+color: #fff;
+}
+.banner  a{
+	border: 2px solid #FFA500;
+	padding: 10px 80px;
+	background: black;
+	color: #fff;
+	margin: 0 auto;
+    text-decoration: none;
+    margin-left: 20px;
+
+}
+.banner a:hover{
+	text-decoration: none;
+	color: #FFA500;
+}
+.bordar{
+	height: 45px;
+	width: 100%;
+	background: #FFA500;
+}
+.not{
+	margin-bottom: 40px;
+}
+.not .titutlo{
+	padding: 20px 30px;
+font-size: 36px;
+color: #2c2c2c;
+text-align: center;
+
+}
+.not h3{
+	background: #FFA500;
+	text-transform: uppercase;
+	padding: 10px 10px;
+	font-size: 20px;
+	color: #fff;
+}
+.not p{
+	font-weight: 300;
+	text-align: justify;
+	font-size: 17px;
+}
+.not .saiba{
+	margin-top: 20px;
+	color:#FFA500;
+	float: right;
+	background: #fff;
+	border: 2px solid #FFA500;
+	padding: 10px 20px;
+}
+.not .saiba:hover{
+	background: #FFA500;
+	text-decoration: none;
+	color: #fff;
+}
+.bordas{
+	height: 20px;
+	width: 100%;
+	background: #FFA500;
+}
+.patrocinadores{
+	background: black;
+	padding: 50px 0px;
+}
+.patrocinadores h1{
+	color: #fff;
+}
