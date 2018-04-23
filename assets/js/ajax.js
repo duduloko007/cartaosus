@@ -1,14 +1,15 @@
 /* ajax busca de paciente*/
+var base = 'http://localhost/cartaosus';
 $(function(){
 	$('#busca').on('keyup', function(){
 
         let texto = $(this).val();
-        var base = '<?php echo BASE_URL?>';
+       
 
         if(texto.length > 4){
          
           $.ajax({
-            url: 'http://localhost/cartaosus/ajax/paciente',
+            url: base + '/ajax/paciente',
             type: 'POST',
             dataType: 'JSON',
             data:{texto:texto},
@@ -44,12 +45,11 @@ $(function(){
  $('#busca').on('keyup', function(){
 
         let texto = $(this).val();
-        var base = '<?php echo BASE_URL?>';
 
         if(texto.length > 4){
          
           $.ajax({
-            url: 'http://localhost/cartaosus/ajax/dependentes',
+            url: base + '/ajax/dependentes',
             type: 'POST',
             dataType: 'JSON',
             data:{texto:texto},
@@ -65,8 +65,7 @@ $(function(){
                 html += '<td>'+data[i].nome+'</td>';
                 html += '<td class="text-center"><a class="btn btn-primary btn-xs" href="'+base+'/paciente/visualizar/'+data[i].id+'">Visualizar</a>\
                     <a class="btn btn-success btn-xs" href="'+base+'/paciente/edit/'+data[i].id+'">Editar</a>\
-                    <a class="btn btn-danger btn-xs" href="'+base+'/paciente/delete/'+data[i].id+'" onclick="return confirm("Tem certeza que realmente quer excluir?")">Excluir</a>\
-                    <a class="btn btn-warning btn-xs" href="'+base+'/paciente/dependentes/'+data[i].id+'">Dependentes</a></td>';
+                    <a class="btn btn-danger btn-xs" href="'+base+'/paciente/delete/'+data[i].id+'" onclick="return confirm("Tem certeza que realmente quer excluir?")">Excluir</a>';
                 html += '</tr>';
               }
 
@@ -87,7 +86,7 @@ $(function(){
           var nome = $(this).val();
           var num_paciente = $('#num_paciente').val();
           $.ajax({
-              url:'http://localhost/cartaosus/ajax/dependentePaciente',
+              url:base + '/ajax/dependentePaciente',
               type: 'POST',
               data:{nome: nome, num_paciente : num_paciente},
               dataType: 'JSON',

@@ -73,7 +73,7 @@ class pacienteController  extends Controller{
 
 		$this->loadTemplate('paciente/dependentes',$dados);
 	}
-		public function visualizar($id){
+	public function visualizar($id){
 		$dados = array();
 		$lista = new paciente();
 		

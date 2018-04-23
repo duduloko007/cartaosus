@@ -14,9 +14,6 @@ class dependentesController  extends Controller{
 
 		$i = new dependentes();
 
-		//echo "<pre>";
-		//print_r($i->InsertDependentes());exit;
-		//echo "</pre>";
 
 		$pagination = new Pagination();
         try {
@@ -33,8 +30,44 @@ class dependentesController  extends Controller{
 	public function add(){
 		$dados = array();
 
-		$this->loadTemplate('dependentes/dependentes_add',$dados);
+		if(isset($_POST['name']) AND !empty($_POST['name'])){
+			$nomepaciente = addslashes($_POST['name']);
+			$num_paciente = addslashes($_POST['num_paciente']);
+			$nomeDependetes = addslashes($_POST['nomeDependetes']);
+			$data_nasc = date("Y-m-d", strtotime(addslashes($_POST['data_nasc'])));
+			$estudante = addslashes($_POST['estudante']);
+			$parentesco = addslashes($_POST['parentesco']);
+			$sexo = addslashes($_POST['sexo']);
+			$cart_indentidade = addslashes($_POST['cart_indentidade']);
+			$ocupacao = addslashes($_POST['ocupacao']);
+			$sanguineo = addslashes($_POST['sanguineo']);
+
+
+			$insert = new dependentes();
+			$insert->add($nomepaciente,$num_paciente,$nomeDependetes,$data_nasc,$estudante,$parentesco,$sexo,$cart_indentidade,$ocupacao,$sanguineo);
+			$dados['msg'] = "Adicionado com sucesso";
+
+		}
+
+	$this->loadTemplate('dependentes/dependentes_add',$dados);
 	}
+	public function visualizar($dependentes,$paciente){
+		$dados = array();
+		$lista = new dependentes();
+		
+		$dados['lista'] = $lista->listDependentesVisualizar($dependentes, $paciente);
+
+
+		$this->loadTemplate('dependentes/visualizar',$dados);
+	}
+
+
+	public function delete($id){
+
+     $u = new dependentes();
+     $u->delete($id);
+     header('Location:'.BASE_URL.'/dependentes');
+  }
 
 	
 }

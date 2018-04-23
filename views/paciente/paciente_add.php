@@ -6,6 +6,7 @@
       <button type="button" class="btn btn-box-tool" data-widget="collapse"></button>
     </div>
   </div>
+  
 
   <div class="box-body">
     <div class="tab-content">
@@ -193,7 +194,7 @@
   </div>
 </div>
 <script type="text/javascript">
-  $(document).ready(function(){
+   $(document).ready(function(){
     $('.date').mask('00/00/0000');
     $('.cep').mask('99999-999');
     $('.phone_with_ddd').mask('(99) 99999-9999');
@@ -201,4 +202,3 @@
     $('.phone').mask('(00) 0000-0000');
   });
 </script>
-

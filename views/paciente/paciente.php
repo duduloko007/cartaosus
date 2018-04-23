@@ -20,7 +20,7 @@
 
                 </div>
                 <div class="col-md-4 pull-right">
-                    <input type="text" id="busca" placeholder="Faça uma busca" class="form-control ">
+                    <input type="text" id="busca" onKeyUp="javascript: this.value=this.value.toUpperCase();" name="nome" placeholder="Faça uma busca" class="form-control ">
                 </div>
      </div>
     <br>

@@ -20,7 +20,7 @@
 
                 </div>
                 <div class="col-md-4 pull-right">
-                    <input type="text" id="busca" placeholder="Faça uma busca" class="form-control ">
+                    <input type="text" id="busca" onKeyUp="javascript: this.value=this.value.toUpperCase();" name="nome" placeholder="Faça uma busca" class="form-control ">
                 </div>
      </div>
     <br>
@@ -40,9 +40,9 @@
                 <td><?php echo $item['dep_codigo'];?></td>
                 <td><?php echo $item['dep_nome'];?></td>
                 <td class="text-center">
-                    <a class="btn btn-primary btn-xs" href="<?php echo BASE_URL?>/paciente/visualizar/<?php echo $item['dep_codigo'];?>">Visualizar</a>
-                    <a class="btn btn-success btn-xs" href="<?php echo BASE_URL?>/paciente/edit/<?php echo $item['dep_codigo'];?>">Editar</a>
-                    <a class="btn btn-danger btn-xs" href="<?php echo BASE_URL?>/paciente/delete/<?php echo $item['dep_codigo'];?>" onclick="return confirm('Tem certeza que realmente quer excluir?')">Excluir</a>
+                    <a class="btn btn-primary btn-xs" href="<?php echo BASE_URL?>/dependentes/visualizar/<?php echo $item['dep_codigo'];?>/<?php echo $item['pac_codigo'];?>">Visualizar</a>
+                    <a class="btn btn-success btn-xs" href="<?php echo BASE_URL?>/dependentes/edit/<?php echo $item['dep_codigo'];?>">Editar</a>
+                    <a class="btn btn-danger btn-xs" href="<?php echo BASE_URL?>/dependentes/delete/<?php echo $item['dep_codigo'];?>" onclick="return confirm('Tem certeza que realmente quer excluir?')">Excluir</a>
                 </td>
             </tr>
             <?php endforeach;?>
@@ -56,43 +56,6 @@
 </div>
 <div id="texto"></div>
 <script type="text/javascript">
-    $('#busca').on('keyup', function(){
-
-        let texto = $(this).val();
-        var base = '<?php echo BASE_URL?>';
-
-        if(texto.length > 4){
-         
-          $.ajax({
-            url: 'http://localhost/cartaosus/ajax/dependentes',
-            type: 'POST',
-            dataType: 'JSON',
-            data:{texto:texto},
-            success: function(data){
-
-            $("#tabela_x").html('');
-
-              var html = '';
-              $(".pagination").css('display', 'none');
-              for(var i in data){
-                html += '<tr>';
-                html += '<td>'+data[i].id+'</td>';
-                html += '<td>'+data[i].nome+'</td>';
-                html += '<td class="text-center"><a class="btn btn-primary btn-xs" href="'+base+'/paciente/visualizar/'+data[i].id+'">Visualizar</a>\
-                    <a class="btn btn-success btn-xs" href="'+base+'/paciente/edit/'+data[i].id+'">Editar</a>\
-                    <a class="btn btn-danger btn-xs" href="'+base+'/paciente/delete/'+data[i].id+'" onclick="return confirm("Tem certeza que realmente quer excluir?")">Excluir</a>\
-                    <a class="btn btn-warning btn-xs" href="'+base+'/paciente/dependentes/'+data[i].id+'">Dependentes</a></td>';
-                html += '</tr>';
-              }
-
-              $("#tabela_x").append(html);               
-                 
-            } 
-
-          });
-
-        }
-          
-    });
+   
 </script>
  
