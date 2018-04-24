@@ -162,6 +162,7 @@
           <li><a href="<?php echo BASE_URL?>/cartao" ><i class="fa fa-circle-o"></i>Remedio</a></li>
           <li><a href="<?php echo BASE_URL?>/cartao/cadastro" ><i class="fa fa-circle-o"></i>Beneficiário</a></li>
           <li><a href="<?php echo BASE_URL?>/cartao" ><i class="fa fa-circle-o"></i>Fornecedor</a></li>
+          <li><a href="<?php echo BASE_URL?>/cartao" ><i class="fa fa-circle-o"></i>Grupo</a></li>
         </ul>
       </li>
         <li class="treeview">
