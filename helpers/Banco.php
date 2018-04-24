@@ -23,7 +23,8 @@ class Banco extends model{
   public function select($table){
     $dados = array();
 
-    $sql = $this->db->prepare("SELECT * FROM {$table}");
+    $sql = $this->db->prepare("SELECT * FROM :table");
+    $this->bindValue(':table', $table);
     $sql->execute();
 
     if($sql->rowCount() > 0){
@@ -35,7 +36,10 @@ class Banco extends model{
   public function actualize($table, $chave,$id){
     $dados = array();
 
-    $sql = $this->db->prepare("SELECT * FROM {$table} WHERE {$chave} = {$id}");
+    $sql = $this->db->prepare("SELECT * FROM {:table} WHERE {:chave} = {:id}");
+    $this->bindValue(':table', $table);
+     $this->bindValue(':chave', $chave);
+      $this->bindValue(':id', $id);
     $sql->execute();
 
     if($sql->rowCount() > 0){

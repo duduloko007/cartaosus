@@ -89,7 +89,7 @@
     </div>
   <br>
     <ul class="sidebar-menu" data-widget="tree">
-      <li class="header">Menu de Navegação</li>
+      <li class="header">Cartão sus</li>
       <li class="active treeview">
         <a href="<?php echo BASE_URL?>">
           <i class="fa fa-dashboard"></i> <span>Dashboard</span>
@@ -125,15 +125,73 @@
       <li class="treeview">
         <a href="#">
           <i class="fa fa-file-pdf-o"></i>
-          <span>Histórico</span>
+          <span>Prontuário</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="" ><i class="fa fa-circle-o"></i>Paciente</a></li>
-          <li><a href="<?php echo BASE_URL?>/permissions" ><i class="fa fa-circle-o"></i>Dependentes</a></li>
+          <li><a href="<?php echo BASE_URL?>/historico/paciente" ><i class="fa fa-circle-o"></i>Paciente</a></li>
+          <li><a href="<?php echo BASE_URL?>/historico/dependente" ><i class="fa fa-circle-o"></i>Dependentes</a></li>
+          <li><a href="<?php echo BASE_URL?>/historico" ><i class="fa fa-circle-o"></i>Histórico</a></li>
         </ul>
+      </li>
+       <li class="treeview">
+        <a href="#">
+          <i class="fa fa-file-pdf-o"></i>
+          <span>Cartão sus</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="<?php echo BASE_URL?>/cartao/cadastro" ><i class="fa fa-circle-o"></i>Cadastrar</a></li>
+          <li><a href="<?php echo BASE_URL?>/cartao" ><i class="fa fa-circle-o"></i>Histórico</a></li>
+        </ul>
+      </li>
+      <li class="header">Controle de Estoque</li>
+        <li class="treeview">
+        <a href="#">
+          <i class="fa fa-file-pdf-o"></i>
+          <span>Cadastro</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="<?php echo BASE_URL?>/cartao" ><i class="fa fa-circle-o"></i>Remedio</a></li>
+          <li><a href="<?php echo BASE_URL?>/cartao/cadastro" ><i class="fa fa-circle-o"></i>Beneficiário</a></li>
+          <li><a href="<?php echo BASE_URL?>/cartao" ><i class="fa fa-circle-o"></i>Fornecedor</a></li>
+        </ul>
+      </li>
+        <li class="treeview">
+        <a href="#">
+          <i class="fa fa-file-pdf-o"></i>
+          <span>Estoque</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+          </a>
+          <ul class="treeview-menu">
+          <li><a href="<?php echo BASE_URL?>/cartao" ><i class="fa fa-circle-o"></i>Estoque</a></li>
+          
+        </ul>
+        
+       
+      </li>
+       <li class="treeview">
+        <a href="#">
+          <i class="fa fa-file-pdf-o"></i>
+          <span>Venda</span>
+        
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-file-pdf-o"></i>
+          <span>Compra</span>
+        </a>
+       
       </li>
     </ul>
   </section>
